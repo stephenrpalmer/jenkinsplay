@@ -8,7 +8,9 @@ node('master') {
     
     stage('Download the commerce suite zip') {
     
-        new File("pom.xml") << '''
+//        new File("pom.xml") << '''
+
+		writeFile file: "sample.txt", text: '''
 			<project>
 			  <modelVersion>4.0.0</modelVersion>
 			  <groupId>com.sap.dbcomp</groupId>
@@ -83,10 +85,10 @@ parallel branches
 
 // After completing the parallel builds, run the final step on the master node
 // that collects the stashed results
-node('master') {
-    stage('Publish Results') {
-    }
-}
+//node('master') {
+//   stage('Publish Results') {
+//    }
+// }
 
 // Database defintion - currently simple string with DaaS key but could get more sophisticated
 class DatabaseDef implements Serializable {
