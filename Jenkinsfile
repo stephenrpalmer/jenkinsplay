@@ -63,7 +63,7 @@ for (databaseDef in databaseDefs) {
 
 					sh '''
 						
-curl -X POST -s \ -F 'format=properties' https://daas.hybris.com/api/db/${bamboo.db.type} >> hybris/config/local.properties" 
+curl -X POST -s \\ -F 'format=properties' https://daas.hybris.com/api/db/${bamboo.db.type} >> hybris/config/local.properties" 
 echo "init.admin.password=${bamboo.admin.password}" >> hybris/config/local.properties
 echo "Local Properties"
 cat hybris/config/local.properties
