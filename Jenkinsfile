@@ -10,7 +10,7 @@ node('master') {
     
 //        new File("pom.xml") << '''
 
-		writeFile file: "sample.txt", text: '''
+		writeFile file: "pom.xml", text: '''
 			<project>
 			  <modelVersion>4.0.0</modelVersion>
 			  <groupId>com.sap.dbcomp</groupId>
