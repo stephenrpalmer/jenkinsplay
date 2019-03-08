@@ -93,7 +93,7 @@ class DatabaseDef implements Serializable {
 
     String daasKey
 
-    StageDef(final String daasKey) {
+    DatabaseDef(final String daasKey) {
         this.daasKey = daasKey
     }
 }
