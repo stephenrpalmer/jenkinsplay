@@ -62,16 +62,13 @@ for (databaseDef in databaseDefs) {
 					unstash name: 'commerceSuiteZip'
 
 					unzip *.zip
+					
+					sh "ls -a"
 
-					sh '''
-						
-curl -X POST -s \\ -F 'format=properties' https://daas.hybris.com/api/db/${bamboo.db.type} >> hybris/config/local.properties" 
-echo "init.admin.password=${bamboo.admin.password}" >> hybris/config/local.properties
-echo "Local Properties"
-cat hybris/config/local.properties
-ant clean all
-ant initialize
-'''
+					sh "curl -X POST -s \\ -F 'format=properties' https://daas.hybris.com/api/db/${bamboo.db.type} >> hybris/config/local.properties" 
+					sh 'echo "init.admin.password=${bamboo.admin.password}" >> hybris/config/local.properties'
+					sh 'cat hybris/config/local.properties'
+					sh 'ant clean all initialize'
 				}
 				catch (ignored) {
 					currentBuild.result = 'UNSTABLE'
