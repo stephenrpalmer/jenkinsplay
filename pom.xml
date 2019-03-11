@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sap.dbcomp</groupId>
+	<artifactId>jenkinsplay</artifactId>
+	<version>1</version>
+	<dependencies>
+		<dependency>
+			<groupId>de.hybris.platform.suite</groupId>
+			<artifactId>commerce-suite</artifactId>
+			<version>1905.0.0.0</version>
+			<type>zip</type>
+		</dependency>
+	</dependencies>
+</project>
